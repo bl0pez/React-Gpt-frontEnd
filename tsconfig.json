@@ -14,6 +14,12 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
+    "paths": {
+      "@Interfaces/*": ["./src/interfaces/*"],
+      "@UseCases/*": ["./src/core/use-cases/*"],
+      "@Components/*": ["./src/presentation/components/*"],
+    },
+
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,

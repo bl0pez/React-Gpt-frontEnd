@@ -35,9 +35,9 @@ export const TextMessage = ({
             autoFocus
             name="message"
             className="flex w-full border rounded-xl text-gray-800 focus:outline-none focus:border-indigo-300 pl-4 h-10"
-            autoComplete={disableCorrections ? "on" : "off"}
-            autoCorrect={disableCorrections ? "on" : "off"}
-            spellCheck={disableCorrections ? "true" : "false"}
+            autoComplete={disableCorrections ? "off" : "on"}
+            autoCorrect={disableCorrections ? "off" : "on"}
+            spellCheck={disableCorrections ? "false" : "true"}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           />
@@ -46,7 +46,7 @@ export const TextMessage = ({
 
       <div className="ml-4">
         <button className="btn-primary">
-          <span className="mr-2">Enviar</span>
+          <span className="mr-2 hidden sm:inline-block">Enviar</span>
           <i className="fa-regular fa-paper-plane"></i>
         </button>
       </div>
