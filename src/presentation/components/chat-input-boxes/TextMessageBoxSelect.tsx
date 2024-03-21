@@ -24,10 +24,10 @@ export const TextMessageBoxSelect = ({
   const handleSendMessage = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (message.trim().length === 0) return;
+    if (selectOption.trim().length === 0) return;
 
     onSendMessage(message, selectOption);
     setMessage("");
-
   };
 
   return (
@@ -50,19 +50,21 @@ export const TextMessageBoxSelect = ({
             onChange={(e) => setMessage(e.target.value)}
           />
 
-          <select 
-          name="select"
-          className="w-2/5 ml-5 border rounded-xl text-gray-800 focus:outline-none focus:border-indigo-300 pl-4 h-10"
-          value={selectOption}
-          onChange={(e) => setSelectOption(e.target.value)}
+          <select
+            name="select"
+            className="w-2/5 ml-5 border rounded-xl text-gray-800 focus:outline-none focus:border-indigo-300 pl-4 h-10"
+            value={selectOption}
+            onChange={(e) => setSelectOption(e.target.value)}
           >
-            <option value="" disabled>Selecciona una opción</option>
+            <option value="" disabled>
+              Selecciona una opción
+            </option>
 
-            {
-              options.map((option) => (
-                <option key={option.id} value={option.id}>{option.text}</option>
-              ))
-            }
+            {options.map((option) => (
+              <option key={option.id} value={option.id}>
+                {option.text}
+              </option>
+            ))}
           </select>
         </div>
       </div>
